@@ -1,4 +1,4 @@
-#ft_printf (checks mandatory part only)
+# ft_printf (checks mandatory part only)
 
     make
 simple output tests
