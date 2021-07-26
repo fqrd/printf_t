@@ -202,13 +202,13 @@ static void	X_t(int check)
 
 int main(void)
 {
-	c_t(0);
-	s_t(0);
+	c_t(1);
+	s_t(1);
 	p_t(1);
-	d_t(0);
-	i_t(0);
-	u_t(0);
-	x_t(0);
-	X_t(0);
+	d_t(1);
+	i_t(1);
+	u_t(1);
+	x_t(1);
+	X_t(1);
 	return (0);
 }
