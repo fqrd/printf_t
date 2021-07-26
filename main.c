@@ -52,18 +52,26 @@ static void	p_t(int check)
 		return ;
 	printf("\n\n [%%p] \n\n");
 	int i = 0;
-	long long *p[] = {
-		NULL
+	long long p[8] = {
+		0,
+		INT_MAX,
+		INT_MIN,
+		LLONG_MAX,
+		LONG_MIN,
+		LLONG_MIN,
+		UINT_MAX
 	};
 	while (i < 8)
 	{
-		if (ft_printf("|%p|", p[i]) != printf("|%p|", p[i]))
-		{
+		if (ft_printf("|%p|", &p[i]) != printf("|%p|", &p[i]))
 			printf("\n%sError on %%p #1%s\n", KRED, KNRM);
-			printf("%sBeware: NULL returns (nil) on Linux, but 0x0 on macos (Guacamole is macos)\n%s", KYEL, KNRM);
-		}
 		printf("\n");
 		i++;
+	}
+	if (ft_printf("|%p|", NULL) != printf("|%p|", NULL))
+	{
+		printf("\n%sError on %%p #1%s\n", KRED, KNRM);
+		printf("%sBeware: NULL returns (nil) on Linux, but 0x0 on macos (Guacamole is macos)\n%s", KYEL, KNRM);
 	}
 }
 
@@ -194,13 +202,13 @@ static void	X_t(int check)
 
 int main(void)
 {
-	c_t(1);
-	s_t(1);
+	c_t(0);
+	s_t(0);
 	p_t(1);
-	d_t(1);
-	i_t(1);
-	u_t(1);
-	x_t(1);
-	X_t(1);
+	d_t(0);
+	i_t(0);
+	u_t(0);
+	x_t(0);
+	X_t(0);
 	return (0);
 }
