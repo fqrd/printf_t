@@ -1,4 +1,4 @@
-SRC = ../ft_printf/
+SRC = ../
 CFLAGS = -Wall -Werror -Wextra
 CC = gcc
 
