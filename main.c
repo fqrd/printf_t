@@ -69,10 +69,8 @@ static void	p_t(int check)
 		i++;
 	}
 	if (ft_printf("|%p|", NULL) != printf("|%p|", NULL))
-	{
 		printf("\n%sError on %%p #1%s\n", KRED, KNRM);
-		printf("%sBeware: NULL returns (nil) on Linux, but 0x0 on macos (Guacamole is macos)\n%s", KYEL, KNRM);
-	}
+	printf("%sBeware: NULL returns (nil) on Linux, but 0x0 on macos (Guacamole is macos)\n%s", KYEL, KNRM);
 }
 
 static void	d_t(int check)
