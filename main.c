@@ -188,6 +188,32 @@ static void	X_t(int check)
 	}
 }
 
+static void	percent_t(int check)
+{
+	if (!check)
+		return ;
+	printf("\n\n [%%X] \n\n");
+
+	char *s = "Original";
+	int d = 1024;
+	
+	if (printf("|%%X|") != printf("|%%X|"))
+		printf("\n%sError on %%c #1%s\n", KRED, KNRM);
+	printf("\n");
+	if (printf("|Hello %%Super%%Magic%%%%Double%%%%%%Triple%%%%%%%%|") != printf("|Hello %%Super%%Magic%%%%Double%%%%%%Triple%%%%%%%%|"))
+		printf("\n%sError on %%c #1%s\n", KRED, KNRM);
+	printf("\n");
+	if (printf("|%s%%s%%%%s%s%%%%%%s%s|",s,s,s) != printf("|%s%%s%%%%s%s%%%%%%s%s|",s,s,s))
+		printf("\n%sError on %%c #1%s\n", KRED, KNRM);
+	printf("\n");
+	if (printf("|%d%%%d%%%%%%d%%%%d%d%%d%%%%%d %%%d %d|", d,d,d,d,d,d) != printf("|%d%%%d%%%%%%d%%%%d%d%%d%%%%%d %%%d %d|", d,d,d,d,d,d))
+		printf("\n%sError on %%c #1%s\n", KRED, KNRM);
+	printf("\n");
+	if (printf("|%s%%d%%s%%%%%s%%d%%%s%%s%%%d%%s%%d%%%%%%s%d%s%d%%s|",s,s,s,d,d,s,d) != printf("|%s%%d%%s%%%%%s%%d%%%s%%s%%%d%%s%%d%%%%%%s%d%s%d%%s|",s,s,s,d,d,s,d))
+		printf("\n%sError on %%c #1%s\n", KRED, KNRM);
+	printf("\n");
+}
+
 int main(void)
 {
 	c_t(1);
@@ -198,5 +224,6 @@ int main(void)
 	u_t(1);
 	x_t(1);
 	X_t(1);
+	percent_t(1);
 	return (0);
 }
